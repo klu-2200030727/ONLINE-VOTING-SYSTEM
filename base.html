@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{% block title %}Online Voting System{% endblock %}</title>
+  <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="container header-inner">
+      <a href="{{ url_for('home') }}" class="logo" aria-label="Online Voting System Home">Online Voting</a>
+      <nav class="nav" role="navigation" aria-label="Primary navigation">
+        <a href="{{ url_for('home') }}" class="nav-link">Home</a>
+        {% if session.get('user_id') %}
+          <a href="{{ url_for('contestants') }}" class="nav-link">Contestants</a>
+          <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+          <span class="nav-username" aria-live="polite">Hello, {{ session.get('username') }}</span>
+        {% else %}
+          <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+          <a href="{{ url_for('signup') }}" class="nav-link">Sign Up</a>
+        {% endif %}
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light and dark theme" title="Toggle theme">🌙</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content" role="main" tabindex="-1">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-messages" role="alert" aria-live="assertive">
+          {% for category, message in messages %}
+            <div class="flash-message flash-{{category}}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </main>
+
+  <script src="{{ url_for('static', filename='js/theme-toggle.js') }}" defer></script>
+</body>
+</html>
+

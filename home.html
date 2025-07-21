@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Home - Online Voting{% endblock %}
+{% block content %}
+<section class="hero-section" role="region" aria-label="Welcome">
+  <h1 class="hero-title">Secure, Easy Online Voting</h1>
+  <p class="hero-subtext">Conduct elections online with confidence and security.</p>
+  {% if not session.get('user_id') %}
+  <a href="{{ url_for('signup') }}" class="btn btn-primary">Get Started</a>
+  {% else %}
+  <a href="{{ url_for('contestants') }}" class="btn btn-primary">View Contestants</a>
+  {% endif %}
+</section>
+<section class="info-section pt-16 pb-20" role="region" aria-label="How it works">
+  <h2 class="section-title">How It Works</h2>
+  <div class="grid-3-columns">
+    <article class="card">
+      <h3>Register & Verify</h3>
+      <p>Create an account and verify your email to participate securely.</p>
+    </article>
+    <article class="card">
+      <h3>View Contestants</h3>
+      <p>Browse the contestants and read about their profiles.</p>
+    </article>
+    <article class="card">
+      <h3>Vote One Time</h3>
+      <p>Cast your vote safely with a single click. Only one vote per user.</p>
+    </article>
+  </div>
+</section>
+{% endblock %}

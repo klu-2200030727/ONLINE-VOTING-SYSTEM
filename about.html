@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}About {{ contestant.name }} - Online Voting{% endblock %}
+{% block content %}
+<section class="section-title-wrapper">
+  <h1>About {{ contestant.name }}</h1>
+</section>
+<section class="about-contestant pt-8 pb-12" aria-label="Contestant details">
+  <article class="card">
+    <h2 class="contestant-name">{{ contestant.name }}</h2>
+    <p class="contestant-description">{{ contestant.description }}</p>
+    <p class="contestant-votes">Votes: {{ contestant.votes }}</p>
+    <a href="{{ url_for('vote', c_id=contestant.id) }}" class="btn btn-primary">Vote for {{ contestant.name }}</a>
+  </article>
+</section>
+{% endblock %}

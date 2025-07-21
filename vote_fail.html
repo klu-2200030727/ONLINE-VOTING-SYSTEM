@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block title %}Vote Failed - Online Voting{% endblock %}
+{% block content %}
+<section class="message-section">
+  <h1>Vote Unsuccessful</h1>
+  <p>You have already cast your vote. Only one vote per user is allowed.</p>
+  <a href="{{ url_for('contestants') }}" class="btn btn-primary">Back to Contestants</a>
+</section>
+{% endblock %}

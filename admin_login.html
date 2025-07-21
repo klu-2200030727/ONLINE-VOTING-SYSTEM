@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Admin Login - Online Voting{% endblock %}
+{% block content %}
+<section class="form-section">
+  <h1>Admin Login</h1>
+  <form method="post" action="{{ url_for('admin_login') }}" novalidate>
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" placeholder="admin" required autocomplete="username" />
+    <label for="password">Password</label>
+    <input type="password" id="password" name="password" placeholder="admin" required autocomplete="current-password" />
+    <button type="submit" class="btn btn-primary">Log In</button>
+  </form>
+</section>
+{% endblock %}

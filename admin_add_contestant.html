@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Add Contestant - Admin - Online Voting{% endblock %}
+{% block content %}
+<section class="form-section pt-16 pb-20" style="max-width: 500px; margin: auto;">
+  <h1>Add New Contestant</h1>
+  <form method="post" action="{{ url_for('admin_add_contestant') }}">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="Contestant name" required />
+    
+    <label for="description">Description</label>
+    <textarea id="description" name="description" placeholder="Brief description" rows="4"></textarea>
+    
+    <button type="submit" class="btn btn-primary mt-4">Add Contestant</button>
+    <a href="{{ url_for('admin_dashboard') }}" class="btn btn-secondary mt-4 ml-2">Cancel</a>
+  </form>
+</section>
+{% endblock %}

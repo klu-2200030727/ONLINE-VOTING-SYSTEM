@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}Contestants - Online Voting{% endblock %}
+{% block content %}
+<section class="section-title-wrapper">
+  <h1>Contestants</h1>
+</section>
+<section class="grid-3-columns pt-8 pb-12" aria-label="Contestants list">
+  {% if contestants %}
+    {% for c in contestants %}
+      <article class="card contestant-card" tabindex="0" role="group" aria-labelledby="contestant-name-{{ c.id }}">
+        <h2 id="contestant-name-{{ c.id }}" class="contestant-name">{{ c.name }}</h2>
+        <p class="contestant-votes">Vote</p>
+        <div class="contestant-actions">
+          <a href="{{ url_for('about_contestant', c_id=c.id) }}" class="btn btn-secondary">About</a>
+          <a href="{{ url_for('vote', c_id=c.id) }}" class="btn btn-primary">Vote</a>
+        </div>
+      </article>
+    {% endfor %}
+  {% else %}
+    <p>No contestants found.</p>
+  {% endif %}
+</section>
+{% endblock %}

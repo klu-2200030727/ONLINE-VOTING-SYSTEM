@@ -1,0 +1,328 @@
+/* Fonts & base */
+body {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  color: #6b7280;
+  background-color: var(--bg);
+  margin: 0;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #374151;
+  --primary: #000000;
+  --primary-hover: #333333;
+  --secondary: #4b5563;
+  --card-bg: #f9fafb;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  --btn-bg: var(--primary);
+  --btn-fg: #fff;
+  --btn-hover-bg: var(--primary-hover);
+  --header-bg: #ffffff;
+  --header-shadow: rgba(0, 0, 0, 0.1);
+  --link-color: #2563eb;
+  --link-hover: #1d4ed8;
+}
+
+[data-theme='dark'] {
+  --bg: #1f2937;
+  --fg: #d1d5db;
+  --primary: #efefef;
+  --primary-hover: #cccccc;
+  --secondary: #e5e7eb;
+  --card-bg: #374151;
+  --card-shadow: rgba(0, 0, 0, 0.5);
+  --btn-bg: var(--primary);
+  --btn-fg: #111827;
+  --btn-hover-bg: var(--primary-hover);
+  --header-bg: #111827;
+  --header-shadow: rgba(0, 0, 0, 0.7);
+  --link-color: #60a5fa;
+  --link-hover: #3b82f6;
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  background: var(--header-bg);
+  box-shadow: 0 1px 5px var(--header-shadow);
+  z-index: 100;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+}
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--primary);
+  text-decoration: none;
+}
+.nav a,
+.nav .nav-username {
+  margin-left: 1.25rem;
+  font-weight: 600;
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.nav a:hover {
+  color: var(--link-hover);
+}
+.nav .nav-username {
+  display: inline-block;
+  font-style: italic;
+  color: var(--primary);
+}
+
+.theme-toggle {
+  margin-left: 1.5rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.4rem;
+  color: var(--secondary);
+  padding: 0;
+  user-select: none;
+}
+.theme-toggle:hover {
+  color: var(--primary);
+}
+
+/* Hero section */
+.hero-section {
+  padding: 6rem 1rem 4rem;
+  text-align: center;
+}
+.hero-title {
+  font-weight: 800;
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.hero-subtext {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+.btn {
+  display: inline-block;
+  font-weight: 700;
+  text-align: center;
+  padding: 0.85rem 2.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  user-select: none;
+}
+.btn-primary {
+  background-color: var(--btn-bg);
+  color: var(--btn-fg);
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--btn-hover-bg);
+}
+.btn-secondary {
+  background-color: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--primary);
+  color: var(--btn-fg);
+}
+
+/* Sections */
+.pt-16 {
+  padding-top: 4rem;
+}
+.pb-20 {
+  padding-bottom: 5rem;
+}
+.pt-8 {
+  padding-top: 2rem;
+}
+.pb-12 {
+  padding-bottom: 3rem;
+}
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: var(--primary);
+}
+.section-title-wrapper {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  text-align: center;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  box-shadow: 0 2px 8px var(--card-shadow);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  color: var(--fg);
+}
+.grid-3-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.contestant-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.contestant-name {
+  font-weight: 700;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+.contestant-votes {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--secondary);
+}
+.contestant-actions a {
+  margin-right: 0.75rem;
+  margin-top: auto;
+}
+.contestant-actions a:last-child {
+  margin-right: 0;
+}
+
+/* Forms */
+.form-section {
+  max-width: 400px;
+  margin: 3rem auto 6rem;
+  padding: 1.5rem;
+}
+.form-section h1 {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
+label {
+  display: block;
+  margin-bottom: 0.25rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 0.6rem 0.85rem;
+  margin-bottom: 1.25rem;
+  border: 2px solid #ddd;
+  border-radius: 0.45rem;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+.form-footer-text {
+  text-align: center;
+  font-size: 0.9rem;
+}
+.form-footer-text a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+.form-footer-text a:hover {
+  text-decoration: underline;
+}
+
+/* Flash messages */
+.flash-messages {
+  max-width: 600px;
+  margin: 1rem auto;
+  padding: 0 1rem;
+}
+.flash-message {
+  padding: 1rem 1.25rem;
+  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  color: white;
+  user-select: none;
+}
+.flash-success {
+  background-color: #34d399; /* green */
+}
+.flash-danger {
+  background-color: #ef4444; /* red */
+}
+.flash-warning {
+  background-color: #fbbf24; /* amber */
+  color: black;
+}
+.flash-info {
+  background-color: #60a5fa; /* blue */
+}
+
+/* Message Sections */
+.message-section {
+  max-width: 500px;
+  margin: 6rem auto;
+  text-align: center;
+}
+.message-section h1 {
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+.message-section p {
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 2rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  .nav a,
+  .nav .nav-username,
+  .theme-toggle {
+    margin-left: 0.75rem;
+    font-size: 0.9rem;
+  }
+  .contestant-actions a {
+    margin: 0.5rem 0.5rem 0 0;
+    display: inline-block;
+  }
+}
