@@ -155,13 +155,13 @@ Found a bug or have an idea? Feel free to fork and make a pull request.
 
 ## 📜 License
 
-MIT License © Tarun Kanth
+MIT License © Sri Harsha  © Tarun Kanth
 
 ---
 
 ## 📧 Contact
 
-Questions? Email me at [tarunkanthmovva007@gmail.com]
+Questions? Email me at [harshaparasa20@gmail.com]
 
 ---
 
